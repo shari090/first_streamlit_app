@@ -43,9 +43,4 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains: ")
 streamlit.dataframe(my_data_rows)
 
-add_my_fruit = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado', 'Strawberries'])
-fruits_to_show2 = my_fruit_list.loc[fruits_selected]
-fruit_choice2 = streamlit.text_input('What fruit would you like to add?','Kiwi')
-streamlit.write('Thanks for adding jackfruit ', fruit_choice)
-import requests
-fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+streamlit.multiselect("What fruit would you like to add? ", list(my_fruit_list.index))
